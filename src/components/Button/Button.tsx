@@ -8,13 +8,13 @@ const options = {
   WARNING: "warning",
 };
 
-interface Props {
+export interface Props {
   label: string;
   onClick: () => void;
   bg?: string;
 }
 
-export const Button = ({ label, onClick, bg = "primary" }: Props) => {
+export default function Button({ label, onClick, bg = "primary" }: Props) {
   if (!Object.values(options).includes(bg))
     return (
       <button
@@ -30,4 +30,4 @@ export const Button = ({ label, onClick, bg = "primary" }: Props) => {
       {label}
     </button>
   );
-};
+}
